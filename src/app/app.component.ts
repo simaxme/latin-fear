@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {PageComponent} from "./page/page.component";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'latin-fear';
+  private pages: PageComponent[] = [];
+
+  public registerComponent(component: PageComponent): number {
+    let currentHeight = 0;
+    this.pages.forEach(element => currentHeight+=element.height);
+    this.pages.push(component);
+    return currentHeight;
+  }
+
 }

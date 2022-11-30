@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+$terra-cotta: #ed6a5aff;
+$pale-spring-bud: #f4f1bbff;
+$opal: #9bc1bcff;
+$independence: #5d576bff;
+$alabaster: #e6ebe0ff;
+
+body {
+  width: 100vw;
+  overflow-x: hidden;;
+  overflow-y: auto;
+  min-height: 100vh;
+  background-color: rgb(20, 20, 20);
+}
+
+* {
+  color: white;
+}

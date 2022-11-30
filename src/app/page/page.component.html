@@ -1,0 +1,12 @@
+<div style="position: relative; width: 100vw;" [style.height.vh]="(height)*100"></div>
+
+<div class="page-container"
+     [style.transform]="'translateY(' + (progress*100) + 'vh)'" *ngIf="!hide"
+     [style.opacity]="(1 - (progress < 0 ? -progress : progress))*100 + '%'"
+     [style.height.%]="height*100"
+>
+  <div class="content-box">
+    <ng-content></ng-content>
+  </div>
+  <!--<ng-content></ng-content>-->
+</div>
