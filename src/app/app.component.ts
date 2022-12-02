@@ -7,7 +7,7 @@ import {PageComponent} from "./page/page.component";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private pages: PageComponent[] = [];
+  public pages: PageComponent[] = [];
 
   public registerComponent(component: PageComponent): number {
     let currentHeight = 0;
@@ -15,5 +15,4 @@ export class AppComponent {
     this.pages.push(component);
     return currentHeight;
   }
-
 }

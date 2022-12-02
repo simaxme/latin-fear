@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-$terra-cotta: #ed6a5aff;
-$pale-spring-bud: #f4f1bbff;
-$opal: #9bc1bcff;
-$independence: #5d576bff;
-$alabaster: #e6ebe0ff;
+// https://colorhunt.co/palette/0f044c141e61787a91eeeeee
+
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
+}
 
 body {
   width: 100vw;
@@ -15,4 +16,5 @@ body {
 
 * {
   color: white;
+  font-family: Lato;
 }

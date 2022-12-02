@@ -1,0 +1,7 @@
+<div class="sidebar-parent">
+  <div class="sidebar">
+    <div *ngFor="let page of appComponent.pages" class="sidebar-element" [class.active]="!page.hide">
+      <div class="sidebar-progress" [style.height.%]="page.readProgress*100"></div>
+    </div>
+  </div>
+</div>

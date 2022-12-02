@@ -1,4 +1,4 @@
-import {Component, Host, Inject, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Host, Inject, Input, OnDestroy, OnInit, Optional} from '@angular/core';
 import {debounceTime, fromEvent, Subject, takeUntil} from "rxjs";
 import {AppComponent} from "../app.component";
 import {intervalProvider} from "rxjs/internal/scheduler/intervalProvider";
@@ -15,6 +15,8 @@ export class PageComponent implements OnInit, OnDestroy {
   @Input() public height!: number;
   @Input() public transitionHeight!: number;
 
+  @Input() private positionIndex: number = 0;
+
   public readProgress: number = 0;
 
   public hide = true;
@@ -28,7 +30,7 @@ export class PageComponent implements OnInit, OnDestroy {
   public progress = 0;
 
   constructor(
-    @Inject(AppComponent) private appComponent: AppComponent
+    @Optional() @Host() private appComponent: AppComponent
   ) {
     fromEvent(window, "resize").pipe(takeUntil(this.destroy$), debounceTime(300)).subscribe(() => {
       this.calcGeometry();
@@ -40,7 +42,11 @@ export class PageComponent implements OnInit, OnDestroy {
 
 
   public ngOnInit() {
-    this.position = this.appComponent.registerComponent(this);
+    if (this.appComponent !== null) {
+      this.position = this.appComponent.registerComponent(this);
+    } else {
+      this.position = this.positionIndex;
+    }
 
     this.calcGeometry();
     this.handleScroll();

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Host, OnInit} from '@angular/core';
+import {AppComponent} from "../../app.component";
+import {PageComponent} from "../page.component";
 
 @Component({
   selector: 'app-intro-page',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./intro-page.component.scss']
 })
 export class IntroPageComponent {
+  constructor(
+    @Host() public pageComponent: PageComponent
+  ) {
+  }
 
 }

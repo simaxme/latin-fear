@@ -1,0 +1,61 @@
+.sidebar-parent {
+  position: fixed;
+
+  top: 10vw;
+  height: calc(100vh - 20vw);
+
+  width: 8vw;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  position: relative;
+
+  height: 100%;
+  width: .5rem;
+
+  border-radius: .25rem;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: stretch;
+
+  row-gap: 2rem;
+}
+
+.sidebar-element {
+  position: relative;
+
+  background-color: rgb(40, 40, 40);
+
+  border-radius: .5rem;
+
+  flex-grow: 1;
+  height: 2rem;
+
+  transition: all .5s;
+
+  overflow: hidden;
+}
+
+.sidebar-element.active {
+  flex-grow: 3;
+  background-color: rgb(60, 60, 60);
+}
+
+.sidebar-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: white;
+}

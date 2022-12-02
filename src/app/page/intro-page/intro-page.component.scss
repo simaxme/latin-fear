@@ -1,0 +1,28 @@
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  background: linear-gradient(0deg, #0F044C 0%, #141E61 100%);
+}
+
+.additional-information {
+  position: absolute;
+  bottom: 140%;
+  width: 100%;
+  text-align: center;
+
+  transition: opacity .5s, transform .5s;
+
+  opacity: 0;
+
+  transform: translateY(50%);
+}
+
+.additional-information.show {
+  opacity: 100%;
+
+  transform: translateY(0%);
+}
