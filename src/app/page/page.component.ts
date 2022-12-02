@@ -1,4 +1,4 @@
-import {Component, Host, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Host, Inject, Input, OnDestroy, OnInit} from '@angular/core';
 import {debounceTime, fromEvent, Subject, takeUntil} from "rxjs";
 import {AppComponent} from "../app.component";
 import {intervalProvider} from "rxjs/internal/scheduler/intervalProvider";
@@ -15,6 +15,8 @@ export class PageComponent implements OnInit, OnDestroy {
   @Input() public height!: number;
   @Input() public transitionHeight!: number;
 
+  public readProgress: number = 0;
+
   public hide = true;
 
   private position!: number;
@@ -26,7 +28,7 @@ export class PageComponent implements OnInit, OnDestroy {
   public progress = 0;
 
   constructor(
-    @Host() private appComponent: AppComponent
+    @Inject(AppComponent) private appComponent: AppComponent
   ) {
     fromEvent(window, "resize").pipe(takeUntil(this.destroy$), debounceTime(300)).subscribe(() => {
       this.calcGeometry();
@@ -41,6 +43,7 @@ export class PageComponent implements OnInit, OnDestroy {
     this.position = this.appComponent.registerComponent(this);
 
     this.calcGeometry();
+    this.handleScroll();
   }
 
   private calcGeometry(): void {
@@ -68,10 +71,13 @@ export class PageComponent implements OnInit, OnDestroy {
       let progress = 0;
       if (scroll < minComplete) {
         progress = (1 - (scroll - min) / (minComplete - min));
+        this.readProgress = 0;
       } else if (scroll > maxComplete) {
+        this.readProgress = 1;
         progress = -((scroll - maxComplete) / (max - maxComplete));
       } else {
         progress = 0;
+        this.readProgress = (scroll - minComplete) / (maxComplete - minComplete);
       }
       this.progress = progress;
     }

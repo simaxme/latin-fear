@@ -1,12 +1,14 @@
 <div class="pages">
-  <app-page [height]="1" [transitionHeight]="0.2">
-    Hallo1
+  <app-intro-page></app-intro-page>
+
+  <app-page [height]="3" [transitionHeight]="0.4">
+    Hallo2
   </app-page>
 
   <app-page [height]="1" [transitionHeight]="0.4">
-    Hallo2
-  </app-page>
-  <app-page [height]="1" [transitionHeight]="0.4">
     Hallo3
   </app-page>
+
+  <!-- Delimiter for last page -->
+  <div style="position: relative; width: 100vw; height: calc(40vh + 8rem)"></div>
 </div>
