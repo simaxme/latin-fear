@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, TemplateRef} from '@angular/core';
 
 @Component({
   selector: 'app-wave',
@@ -6,5 +6,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./wave.component.scss']
 })
 export class WaveComponent {
-  @Input() public height: number = 20;
+  @Input() public template?: TemplateRef<any>;
 }

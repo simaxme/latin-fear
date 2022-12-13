@@ -1,16 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 // https://colorhunt.co/palette/0f044c141e61787a91eeeeee
 
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 @font-face {
   font-family: "Lato";
   src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
 }
 
 body {
-  width: 100vw;
   overflow-x: hidden;;
   overflow-y: auto;
-  min-height: 100vh;
   background-color: rgb(20, 20, 20);
 }
 

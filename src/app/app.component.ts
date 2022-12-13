@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {PageComponent} from "./page/page.component";
+import {PageComponent} from "./components/page/page.component";
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,5 @@ import {PageComponent} from "./page/page.component";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public pages: PageComponent[] = [];
 
-  public registerComponent(component: PageComponent): number {
-    let currentHeight = 0;
-    this.pages.forEach(element => currentHeight+=element.height);
-    this.pages.push(component);
-    return currentHeight;
-  }
 }

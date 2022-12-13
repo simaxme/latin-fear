@@ -1,0 +1,15 @@
+<app-page [index]="2" [steps]="5" (stepChange)="step = $event">
+  <app-card>
+    <h1 style="margin-bottom: 2rem"><b>Das sollst du tun:</b></h1>
+    <span style="font-size: 1.5em; margin-top: 2rem">
+      <p *ngIf="step >= 1">1. Schätze deine Angst ein: Ist es schlimm, wenn deine Befürchtungen wahr werden?</p>
+      <p *ngIf="step >= 2">2. Bereite dich <b>immer</b> auf das vor, was passiert, sobald deine Angst in Erfüllung.</p>
+      <p *ngIf="step >= 3">3. Finde heraus, <b>was</b> im schlimmsten Fall bei deiner Angst passieren kann.</p>
+      <p *ngIf="step >= 4">4. Beurteile deine Ergebnisse</p>
+
+      <p style="margin-top: 1rem; color: orange" *ngIf="step >= 5">
+        Sobald du diese Regeln ausgeführt hast, wird dir auffallen, wie unbedeutend deine Furcht ist.
+      </p>
+    </span>
+  </app-card>
+</app-page>
