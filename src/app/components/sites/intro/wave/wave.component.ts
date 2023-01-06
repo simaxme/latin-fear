@@ -7,4 +7,5 @@ import {Component, Input, TemplateRef} from '@angular/core';
 })
 export class WaveComponent {
   @Input() public template?: TemplateRef<any>;
+  @Input() public invert: boolean = false;
 }

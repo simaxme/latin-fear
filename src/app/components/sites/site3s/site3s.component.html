@@ -1,0 +1,10 @@
+<app-page [index]="4" [steps]="6" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
+  <div class="background" [@inOutAnimation] [class.light]="init < 2">
+    <app-wave [invert]="true" [@animateWave] *ngIf="init >= 5"></app-wave>
+
+    <div>
+      <label>Das Leben ist keine leichte Sache.</label>
+      <label>Die Welt kann auch mal Kopfüber stehen.</label>
+    </div>
+  </div>
+</app-page>

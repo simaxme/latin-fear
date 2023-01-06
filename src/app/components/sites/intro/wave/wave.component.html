@@ -1,4 +1,4 @@
-<div class="ocean">
+<div class="ocean" [class.inverted]="invert">
   <div class="wave"></div>
   <ng-container *ngIf="template">
     <ng-container *ngTemplateOutlet="template"></ng-container>

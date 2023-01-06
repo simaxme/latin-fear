@@ -8,6 +8,11 @@
   height: 100%;
 
   background-color: #000000;
+
+  transition: background-color 4s;
+}
+.background.light {
+  background-color: #eeeeee;
 }
 
 .image {
@@ -37,8 +42,12 @@
   font-size: 2rem;
 }
 
-.labels label {
+.labels * {
   position: relative;
 
   max-width: 70%;
+}
+
+.labels div {
+  color: black;
 }

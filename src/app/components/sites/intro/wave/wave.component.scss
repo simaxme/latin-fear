@@ -8,6 +8,11 @@
   background: #015871;
 }
 
+.ocean.inverted {
+  transform: scaleY(-100%);
+  top: 0;
+}
+
 .wave {
   background: url(https://cdn.kcak11.com/codepen_assets/wave_animation/wave.svg) repeat-x;
   position: absolute;

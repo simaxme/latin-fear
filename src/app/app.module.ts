@@ -12,6 +12,7 @@ import { WaveComponent } from './components/sites/intro/wave/wave.component';
 import { Site1sComponent } from './components/sites/site1s/site1s.component';
 import { Site2sComponent } from './components/sites/site2s/site2s.component';
 import { AnimatedLabelComponent } from './components/animated-label/animated-label.component';
+import { Site3sComponent } from './components/sites/site3s/site3s.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AnimatedLabelComponent } from './components/animated-label/animated-lab
     WaveComponent,
     Site1sComponent,
     Site2sComponent,
-    AnimatedLabelComponent
+    AnimatedLabelComponent,
+    Site3sComponent
   ],
   imports: [
     BrowserModule,

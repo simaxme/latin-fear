@@ -1,4 +1,4 @@
-<app-page [index]="2" [steps]="5" (stepChange)="step = $event">
+<app-page [index]="2" [steps]="5" (stepChange)="step = $event" (activeUpdate)="$event ? load() : destroy()">
   <div class="tree" [class.init]="init > 3">
     <img src="/assets/images/site1/tree.svg">
   </div>

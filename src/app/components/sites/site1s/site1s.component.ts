@@ -14,17 +14,21 @@ import {animateNGIf} from "../../../animations/ngIfAnimation";
     })
   ]
 })
-export class Site1sComponent implements OnInit, OnDestroy {
+export class Site1sComponent implements OnDestroy {
   public destroy$: Subject<void> = new Subject<void>();
 
   public init = 0;
 
   public step = 0;
 
-  public ngOnInit() {
+  public load() {
     interval(1000).pipe(takeUntil(this.destroy$)).subscribe(() => {
       this.init++;
     });
+  }
+
+  public destroy() {
+    this.destroy$.next();
   }
 
   public ngOnDestroy() {
