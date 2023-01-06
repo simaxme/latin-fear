@@ -4,8 +4,8 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 @font-face {
-  font-family: "Lato";
-  src: url("/assets/fonts/Lato-Regular.ttf") format("truetype");
+  font-family: "Varela";
+  src: url("/assets/fonts/VarelaRound-Regular.ttf") format("truetype");
 }
 
 body {
@@ -16,5 +16,5 @@ body {
 
 * {
   color: white;
-  font-family: Lato;
+  font-family: Varela;
 }

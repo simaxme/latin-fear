@@ -10,6 +10,8 @@ import { InteractionComponent } from './components/interaction/interaction.compo
 import { IntroComponent } from './components/sites/intro/intro.component';
 import { WaveComponent } from './components/sites/intro/wave/wave.component';
 import { Site1sComponent } from './components/sites/site1s/site1s.component';
+import { Site2sComponent } from './components/sites/site2s/site2s.component';
+import { AnimatedLabelComponent } from './components/animated-label/animated-label.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { Site1sComponent } from './components/sites/site1s/site1s.component';
     InteractionComponent,
     IntroComponent,
     WaveComponent,
-    Site1sComponent
+    Site1sComponent,
+    Site2sComponent,
+    AnimatedLabelComponent
   ],
   imports: [
     BrowserModule,

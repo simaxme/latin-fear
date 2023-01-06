@@ -1,0 +1,14 @@
+<app-page [index]="3" [steps]="5" (stepChange)="step = $event" (activeUpdate)="$event && triggerActive()">
+  <div class="background" [@inOutAnimation] *ngIf="init >= 2">
+
+    <label class="labels">
+      <app-animated-label [@animateLabel] *ngIf="step === 2" content="Schätze deine Angst ein: Ist es schlimm, wenn deine Befürchtungen wahr werden?"></app-animated-label>
+      <app-animated-label [@animateLabel] *ngIf="step === 3" content="Bereit dich immer auf das vor, was passiert, sobald deine Angst in Erfüllung geht."></app-animated-label>
+      <app-animated-label [@animateLabel] *ngIf="step === 4" content="Finde heraus, was im schlimmsten Fall bei deiner Angst passieren kann."></app-animated-label>
+      <app-animated-label [@animateLabel] *ngIf="step === 5" content="Beurteile deine Ergebnisse."></app-animated-label>
+    </label>
+
+
+    <img src="/assets/images/site2/fear.svg" class="image" *ngIf="init >= 5" [@imageAnimation]>
+  </div>
+</app-page>

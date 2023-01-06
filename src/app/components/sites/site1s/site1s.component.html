@@ -1,15 +1,23 @@
 <app-page [index]="2" [steps]="5" (stepChange)="step = $event">
-  <app-card>
-    <h1 style="margin-bottom: 2rem"><b>Das sollst du tun:</b></h1>
-    <span style="font-size: 1.5em; margin-top: 2rem">
-      <p *ngIf="step >= 1">1. Schätze deine Angst ein: Ist es schlimm, wenn deine Befürchtungen wahr werden?</p>
-      <p *ngIf="step >= 2">2. Bereite dich <b>immer</b> auf das vor, was passiert, sobald deine Angst in Erfüllung.</p>
-      <p *ngIf="step >= 3">3. Finde heraus, <b>was</b> im schlimmsten Fall bei deiner Angst passieren kann.</p>
-      <p *ngIf="step >= 4">4. Beurteile deine Ergebnisse</p>
+  <div class="tree" [class.init]="init > 3">
+    <img src="/assets/images/site1/tree.svg">
+  </div>
+  <div class="dirt" [class.init]="init > 2">
+    <img src="/assets/images/site1/dirt.svg">
+  </div>
 
-      <p style="margin-top: 1rem; color: orange" *ngIf="step >= 5">
-        Sobald du diese Regeln ausgeführt hast, wird dir auffallen, wie unbedeutend deine Furcht ist.
-      </p>
-    </span>
-  </app-card>
+  <div class="labels">
+    <label *ngIf="step >= 2" [@inOutAnimation]>
+      Ignoriere nicht deine Furcht.
+    </label>
+    <label *ngIf="step >= 3" [@inOutAnimation]>
+      Missachte nicht die schlechten Dinge.
+    </label>
+    <label *ngIf="step >= 4" [@inOutAnimation]>
+      Werde dir deiner Furcht bewusst.
+    </label>
+    <label *ngIf="step >= 5" [@inOutAnimation]>
+      Behüte dich nicht immer in der optimistischsten Hoffnung.
+    </label>
+  </div>
 </app-page>
