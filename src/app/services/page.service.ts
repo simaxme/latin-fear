@@ -6,7 +6,7 @@ import {PageComponent} from "../components/page/page.component";
   providedIn: 'root'
 })
 export class PageService {
-  public step$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+  public step$: BehaviorSubject<number> = new BehaviorSubject<number>(2);
 
   public pages: {[key: number]: PageComponent} = {}
 

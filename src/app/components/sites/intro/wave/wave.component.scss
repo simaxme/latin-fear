@@ -6,11 +6,13 @@
   bottom: 0;
   left: 0;
   background: #015871;
+
+  transition: all 3s;
 }
 
 .ocean.inverted {
-  transform: scaleY(-100%);
-  top: 0;
+  transform: scaleY(-100%) translateY(-100%);
+  bottom: 100%;
 }
 
 .wave {

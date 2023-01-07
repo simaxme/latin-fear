@@ -1,10 +1,14 @@
-<app-page [index]="4" [steps]="6" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
+<app-page [index]="4" [steps]="5" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
   <div class="background" [@inOutAnimation] [class.light]="init < 2">
-    <app-wave [invert]="true" [@animateWave] *ngIf="init >= 5"></app-wave>
+    <app-wave [invert]="step <= 3" [@animateWave] *ngIf="init >= 5"></app-wave>
+    <app-wave [invert]="true" [@animateWave] *ngIf="step >= 5"></app-wave>
 
-    <div>
-      <label>Das Leben ist keine leichte Sache.</label>
-      <label>Die Welt kann auch mal Kopfüber stehen.</label>
+    <div class="labels">
+      <app-animated-label *ngIf="step === 2" content="Das Leben ist keine leichte Sache"></app-animated-label>
+<!--      <label>Die Welt kann auch mal Kopfüber stehen.</label>-->
+      <app-animated-label *ngIf="step >= 3 && step <= 4" [class.inverted-label]="step === 3" content="Die Welt kann auch mal Kopfüber stehen."></app-animated-label>
+      <app-animated-label *ngIf="step === 4" content="Es ist normal, dass du auch mal Ausrutscher hast."></app-animated-label>
+      <app-animated-label *ngIf="step === 5" content="Du kannst der Furcht nur dann eine geringe Wichtigkeit zuspielen, wenn du dir über ihre Folgen im Klaren bist."></app-animated-label>
     </div>
   </div>
 </app-page>

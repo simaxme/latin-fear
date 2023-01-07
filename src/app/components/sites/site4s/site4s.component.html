@@ -1,0 +1,15 @@
+<app-page [index]="5" [steps]="4" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
+  <div class="background" [@inOutAnimation] [class.light]="step >= 4">
+    <div class="labels">
+      <app-animated-label class="custom-font" content="Tempus Fugit" *ngIf="init > 1 && step <= 1"></app-animated-label>
+      <app-animated-label class="custom-font" content="- Seneca" *ngIf="init > 3 && step <= 1"></app-animated-label>
+      <app-animated-label content="Die Zeit flieht" *ngIf="init > 5 && step <= 1"></app-animated-label>
+
+      <label [@inOutAnimation] *ngIf="step > 1 && step <= 3" class="custom-font">Zeit ist kostbar</label>
+      <label [@inOutAnimation] *ngIf="step === 3">Jeden Moment stirbt ein Teil von uns</label>
+      <label [@inOutAnimation] *ngIf="step === 4" style="color: black;">Fülle diesen Teil nicht mit Furcht, sondern mit Freude!</label>
+    </div>
+    <app-sandglas class="sandglas" [class.show]="init > 2 && step < 4"></app-sandglas>
+
+  </div>
+</app-page>

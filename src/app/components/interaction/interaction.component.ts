@@ -24,7 +24,9 @@ export class InteractionComponent implements OnInit, OnDestroy {
 
   constructor(
     public pageService: PageService
-  ) { }
+  ) {
+    document.addEventListener("click", () => this.onClick());
+  }
 
   public ngOnInit() {
     this.prompt$.pipe(takeUntil(this.destroy$), debounceTime(15*1000)).subscribe(() => {

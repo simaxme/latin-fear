@@ -7,15 +7,21 @@
   font-family: "Varela";
   src: url("/assets/fonts/VarelaRound-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "MoonDance";
+  src: url("/assets/fonts/MoonDance-Regular.ttf") format("truetype");
+}
 
 body {
   overflow-x: hidden;;
   overflow-y: auto;
   background-color: rgb(20, 20, 20);
   user-select: none;
+  font-family: Varela;
+  color: white;
 }
 
-* {
-  color: white;
-  font-family: Varela;
-}
+//body {
+//  color: white;
+//  font-family: Varela;
+//}

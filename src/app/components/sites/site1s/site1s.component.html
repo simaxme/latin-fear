@@ -1,8 +1,8 @@
 <app-page [index]="2" [steps]="5" (stepChange)="step = $event" (activeUpdate)="$event ? load() : destroy()">
-  <div class="tree" [class.init]="init > 3">
+  <div class="tree" [class.init]="init > 2">
     <img src="/assets/images/site1/tree.svg">
   </div>
-  <div class="dirt" [class.init]="init > 2">
+  <div class="dirt" [class.init]="init > 1">
     <img src="/assets/images/site1/dirt.svg">
   </div>
 

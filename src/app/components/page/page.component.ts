@@ -62,7 +62,7 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
       this.activeUpdate.emit(this.active);
 
       this.step = activeSite.pageStep;
-      this.stepChange.emit(activeSite.pageStep);
+      this.stepChange.emit(this.active ? activeSite.pageStep : 0);
 
       this.changeDetectorRef.detectChanges();
     });

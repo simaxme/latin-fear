@@ -1,0 +1,19 @@
+<app-page [index]="6" [steps]="1" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
+  <div class="background" [@inOutAnimation] [class.light]="init < 2">
+    <div class="input" [@inOutAnimation] *ngIf="init > 2">
+      <label>Mache dir klar, was dich an dein Leben bindet.</label>
+      <div>
+        <input #input type="text" placeholder="Text eingeben...">
+        <button (click)="saveWord(input)">Speichern</button>
+      </div>
+
+      <div>
+        <label class="label" [style.left.vw]="positions[i][0]" [style.top.vh]="positions[i][1]" *ngFor="let word of words; let i = index">
+          {{word}}
+        </label>
+      </div>
+
+    </div>
+
+  </div>
+</app-page>

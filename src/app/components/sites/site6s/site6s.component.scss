@@ -29,12 +29,3 @@
 
   font-size: 2rem;
 }
-.labels * {
-  transition: transform 3s;
-  max-width: 70%;
-  position: relative;
-}
-
-.inverted-label {
-  transform: rotate(180deg);
-}
