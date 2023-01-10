@@ -1,4 +1,4 @@
-<app-page [index]="6" [steps]="1" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
+<app-page [index]="6" [steps]="1" type="document_button" (stepChange)="step = $event" (activeUpdate)="$event ? triggerActive() : destroy()">
   <div class="background" [@inOutAnimation] [class.light]="init < 2">
     <div class="input" [@inOutAnimation] *ngIf="init > 2">
       <label>Mache dir klar, was dich an dein Leben bindet.</label>

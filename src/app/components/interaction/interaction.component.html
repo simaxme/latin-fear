@@ -1,5 +1,9 @@
-<div class="interaction">
+<div class="interaction" *ngIf="isClickbable">
   <div class="prompt" *ngIf="showPrompt" [@inOutAnimation]>
     Tippen, um fortzufahren.
   </div>
 </div>
+<div [@animateButton] *ngIf="!isClickbable" class="interaction-button" (click)="onClick()">
+  Weiter
+</div>
+

@@ -12,7 +12,12 @@ import {animateNGIf} from "../../animations/ngIfAnimation";
       opacity: 0
     }, {
       opacity: 1
-    })
+    }),
+    animateNGIf(2, {
+      width: "0px"
+    }, {
+      width: "15rem"
+    }, "animateButton")
   ]
 })
 export class InteractionComponent implements OnInit, OnDestroy {
@@ -21,16 +26,23 @@ export class InteractionComponent implements OnInit, OnDestroy {
   private prompt$: Subject<void> = new Subject<void>();
 
   public showPrompt = true;
+  public isClickbable = true;
 
   constructor(
     public pageService: PageService
   ) {
-    document.addEventListener("click", () => this.onClick());
+    document.addEventListener("click", () => this.isClickbable && this.onClick());
   }
 
   public ngOnInit() {
-    this.prompt$.pipe(takeUntil(this.destroy$), debounceTime(15*1000)).subscribe(() => {
+    this.prompt$.pipe(takeUntil(this.destroy$), debounceTime(10*1000)).subscribe(() => {
       this.showPrompt = true;
+    });
+
+    this.pageService.step$.pipe(takeUntil(this.destroy$)).subscribe((step) => {
+      const page = this.pageService.stepToPage(step);
+      const element = this.pageService.pages[page.page];
+      this.isClickbable = element === undefined || element?.type === "document";
     });
   }
 

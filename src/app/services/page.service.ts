@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, map, Observable} from "rxjs";
+import {BehaviorSubject, debounceTime, map, Observable, takeUntil} from "rxjs";
 import {PageComponent} from "../components/page/page.component";
 
 @Injectable({
@@ -14,6 +14,10 @@ export class PageService {
     (<any>window).nextStep = () => this.nextStep();
     (<any>window).prevStep = () => this.prevStep();
     this.step$.subscribe(page => console.warn(page));
+    this.step$.pipe(debounceTime(200*1000)).subscribe((step: number) => {
+      if (step <= 2) return;
+      window.location.reload();
+    });
   }
 
   public prevStep(): void {

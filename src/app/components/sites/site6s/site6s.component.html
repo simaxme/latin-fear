@@ -1,7 +1,7 @@
-<app-page [index]="7" [steps]="2" (stepChange)="step = $event; onStep($event)" (activeUpdate)="$event ? triggerActive() : destroy()">
+<app-page [index]="7" [steps]="4" (stepChange)="step = $event; onStep($event)" (activeUpdate)="$event ? triggerActive() : destroy()">
   <div class="background" [@inOutAnimation] [class.light]="init >= 2">
     <div class="labels">
-      <label [@inOutAnimation] *ngIf="init >= 4 && step === 1" style="color: black;">Fülle diesen Teil nicht mit Furcht, sondern mit Freude!</label>
+      <label [@inOutAnimation] *ngIf="init >= 4 && step === 2" style="color: black;">Fülle diesen Teil nicht mit Furcht, sondern mit Freude!</label>
     </div>
   </div>
 </app-page>

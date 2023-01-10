@@ -42,6 +42,8 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() public step: number = 0;
   @Output() public stepChange: EventEmitter<number> = new EventEmitter<number>();
 
+  @Input() public type: "document" | "document_button" = "document";
+
 
   constructor(
     private pageService: PageService,
