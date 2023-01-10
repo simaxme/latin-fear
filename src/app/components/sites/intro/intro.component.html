@@ -1,5 +1,5 @@
 <app-page (stepChange)="step = $event" [steps]="2" [index]="1">
-    <div class="position-absolute w-100 h-50 d-flex flex-column align-items-center justify-content-center">
+    <div class="position-absolute w-100 h-50 d-flex flex-column align-items-center">
       <div class="d-flex flex-column flex-nowrap title">
         <span style="font-weight: bold; font-size: 3em;">Wie du deine Angst überwindest</span>
         <span style="font-size: 2.5em;" class="flex-grow-0" *ngIf="step >= 2" [@inOutAnimation]>nach Seneca</span>

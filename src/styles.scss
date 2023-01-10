@@ -12,16 +12,24 @@
   src: url("/assets/fonts/MoonDance-Regular.ttf") format("truetype");
 }
 
-body {
+html, body {
   overflow-x: hidden;;
   overflow-y: hidden;
   background-color: rgb(20, 20, 20);
   user-select: none;
   font-family: Varela;
   color: white;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 //body {
 //  color: white;
 //  font-family: Varela;
 //}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 8px;
+  }
+}
